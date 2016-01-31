@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="kitconcept.policy">
+
+  <i18n:registerTranslations directory="locales" />
+
+  <includeDependencies package="." />
+
+  <include package=".browser" />
+
+
+  <genericsetup:registerProfile
+      name="default"
+      title="kitconcept.policy"
+      directory="profiles/default"
+      description="Installs the kitconcept.policy add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:importStep
+      name="kitconcept.policy-postInstall"
+      title="kitconcept.policy post_install import step"
+      description="Post install import step from kitconcept.policy"
+      handler=".setuphandlers.post_install">
+  </genericsetup:importStep>
+
+</configure>

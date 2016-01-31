@@ -1,0 +1,5 @@
+====================
+kitconcept.policy
+====================
+
+User documentation
