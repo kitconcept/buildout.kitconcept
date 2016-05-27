@@ -33,6 +33,7 @@ nosetests.xml
 
 .codeintel
 
+etc/nginx
 etc/haproxy.conf
 etc/varnish.vcl
 
