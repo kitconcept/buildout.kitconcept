@@ -7,7 +7,7 @@ RUN pip install -U pip virtualenv
 #RUN git clone https://github.com/sneridagh/bobtemplates.kitconcept.git /plone
 ADD . /plone
 
-RUN cd /plone && wget http://dist.plone.org/release/5.0.4/buildout-cache.tar.bz2 && tar xvfj buildout-cache.tar.bz2 && mv buildout-cache/eggs .
+RUN cd /plone && wget http://dist.plone.org/release/5.0.6/buildout-cache.tar.bz2 && tar xvfj buildout-cache.tar.bz2 && mv buildout-cache/eggs .
 RUN cd /plone && virtualenv --clear . && ./bin/python bootstrap-buildout.py && ./bin/buildout -c live.cfg
 RUN chown -R kitconcept.kitconcept /plone
 
