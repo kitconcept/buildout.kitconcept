@@ -64,7 +64,7 @@ sub vcl_recv {
   if (req.http.Cookie) {
       set req.http.Cookie = ";" + req.http.Cookie;
       set req.http.Cookie = regsuball(req.http.Cookie, "; +", ";");
-      set req.http.Cookie = regsuball(req.http.Cookie, ";(statusmessages|__ac|_ZopeId|__cp|beaker\.session|authomatic|serverid)=", "; \1=");
+      set req.http.Cookie = regsuball(req.http.Cookie, ";(I18N_LANGUAGE|statusmessages|__ac|_ZopeId|__cp|beaker\.session|authomatic|serverid)=", "; \1=");
       set req.http.Cookie = regsuball(req.http.Cookie, ";[^ ][^;]*", "");
       set req.http.Cookie = regsuball(req.http.Cookie, "^[; ]+|[; ]+$", "");
 
